@@ -1,1 +1,38 @@
-<p>test</p>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>ใบเสร็จค่าส่วนกลางหมู่บ้านวรางกูลคลอง 4</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
+    <style>
+/*.logo img, .name {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+}
+.name {
+    width: 200px;
+    margin: 0 auto;
+}
+#no[readonly] {background-color: #e9ecef;}
+}*/
+
+html, body {height: 100%;}
+body {margin: 0;}
+    </style>
+</head>
+<body>
+    <iframe id="viewpdf" src="" frameborder="0" style="height: 100%; width: 100%;"></iframe>
+    <script>
+const urlParams = new URLSearchParams(window.location.search);
+if(urlParams.has("no")) {
+    const receipt_no = urlParams.get("no").replace("/", "_");
+    //document.getElementById("no").setAttribute("value", receipt_no);
+    //document.getElementById("no").setAttribute("readonly", "readonly");
+    document.getElementById("viewpdf").setAttribute("src", "assets/receipt/" + receipt_no + ".pdf");
+}
+    </script>
+</body>
+</html>
